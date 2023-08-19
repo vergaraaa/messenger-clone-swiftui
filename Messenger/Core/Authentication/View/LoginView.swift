@@ -8,8 +8,110 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State var email = ""
+    @State var password = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Spacer()
+                
+                // logo
+                Image("messenger_logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .padding()
+                
+                // textfield
+                VStack {
+                    TextField("Enter your email...", text: $email)
+                        .font(.subheadline)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 25)
+                    
+                    SecureField("Enter your password...", text: $password)
+                        .font(.subheadline)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 25)
+                }
+                
+                // forgot password
+                Button {
+                    print("forgot password")
+                } label: {
+                    Text("Forgot password?")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .padding(.top)
+                        .padding(.trailing, 20)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                
+                // login button
+                Button {
+                    print("login")
+                } label: {
+                    Text("Login")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: 360, height: 45)
+                        .background(Color(.systemBlue))
+                        .cornerRadius(10)
+                }
+                .padding(.vertical)
+
+                // or
+                HStack {
+                    Rectangle()
+                        .frame(width: (UIScreen.main.bounds.width / 2) - 40, height: 0.5)
+                    
+                    Text("OR")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                    
+                    Rectangle()
+                        .frame(width: (UIScreen.main.bounds.width / 2) - 40, height: 0.5)
+                }
+                .foregroundColor(.gray)
+                
+                // facebook login
+                HStack {
+                    Image("facebook_logo")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Continue with Facebook")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(.systemBlue))
+                }
+                .padding(.top, 10)
+                
+                Spacer()
+                
+                Divider()
+                
+                // sign up link
+                NavigationLink {
+                    Text("Sign up view")
+                } label: {
+                    HStack(spacing: 3) {
+                        Text("Don't have an account?")
+                        
+                        Text("Sign up")
+                            .fontWeight(.bold)
+                    }
+                    .font(.footnote )
+                }
+                .padding()
+            }
+        }
     }
 }
 
