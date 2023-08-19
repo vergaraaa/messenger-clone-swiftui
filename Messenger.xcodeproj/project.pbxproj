@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0594FAC2A916A4A008F38DF /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FAB2A916A4A008F38DF /* InboxView.swift */; };
+		F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB02A916B40008F38DF /* ActiveNowView.swift */; };
+		F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB22A916CC1008F38DF /* InboxRowView.swift */; };
 		F07927CB2A904D8300AE06CB /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07927CA2A904D8300AE06CB /* MessengerApp.swift */; };
 		F07927CD2A904D8300AE06CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07927CC2A904D8300AE06CB /* ContentView.swift */; };
 		F07927CF2A904D8400AE06CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07927CE2A904D8400AE06CB /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0594FAB2A916A4A008F38DF /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		F0594FB02A916B40008F38DF /* ActiveNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowView.swift; sourceTree = "<group>"; };
+		F0594FB22A916CC1008F38DF /* InboxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRowView.swift; sourceTree = "<group>"; };
 		F07927C72A904D8300AE06CB /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07927CA2A904D8300AE06CB /* MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
 		F07927CC2A904D8300AE06CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0594FA82A916A2E008F38DF /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				F0594FAA2A916A42008F38DF /* View */,
+				F0594FA92A916A3E008F38DF /* ViewModel */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		F0594FA92A916A3E008F38DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0594FAA2A916A42008F38DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0594FAB2A916A4A008F38DF /* InboxView.swift */,
+				F0594FB22A916CC1008F38DF /* InboxRowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0594FAD2A916B26008F38DF /* ActiveNow */ = {
+			isa = PBXGroup;
+			children = (
+				F0594FAF2A916B34008F38DF /* View */,
+				F0594FAE2A916B31008F38DF /* ViewModel */,
+			);
+			path = ActiveNow;
+			sourceTree = "<group>";
+		};
+		F0594FAE2A916B31008F38DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0594FAF2A916B34008F38DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0594FB02A916B40008F38DF /* ActiveNowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F07927BE2A904D8300AE06CB = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +172,9 @@
 		F07927DD2A904D8D00AE06CB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F0594FAD2A916B26008F38DF /* ActiveNow */,
 				F07927D92A904D8900AE06CB /* Authentication */,
+				F0594FA82A916A2E008F38DF /* Inbox */,
 				F07927E42A90557F00AE06CB /* Modifiers */,
 				F07927DE2A904DB900AE06CB /* Root */,
 			);
@@ -218,7 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */,
 				F07927E32A9053E200AE06CB /* SignUpView.swift in Sources */,
+				F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */,
+				F0594FAC2A916A4A008F38DF /* InboxView.swift in Sources */,
 				F07927E12A904DD300AE06CB /* LoginView.swift in Sources */,
 				F07927CD2A904D8300AE06CB /* ContentView.swift in Sources */,
 				F07927E62A90559800AE06CB /* MSTextFieldModifier.swift in Sources */,
