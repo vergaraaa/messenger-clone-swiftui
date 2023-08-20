@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F054DB182A92B1070058F1D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054DB172A92B1070058F1D7 /* User.swift */; };
+		F054DB1B2A92B3860058F1D7 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054DB1A2A92B3860058F1D7 /* CircularProfileImageView.swift */; };
 		F0594FAC2A916A4A008F38DF /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FAB2A916A4A008F38DF /* InboxView.swift */; };
 		F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB02A916B40008F38DF /* ActiveNowView.swift */; };
 		F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB22A916CC1008F38DF /* InboxRowView.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		F054DB172A92B1070058F1D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F054DB1A2A92B3860058F1D7 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		F0594FAB2A916A4A008F38DF /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		F0594FB02A916B40008F38DF /* ActiveNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowView.swift; sourceTree = "<group>"; };
 		F0594FB22A916CC1008F38DF /* InboxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRowView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F054DB192A92B3700058F1D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F054DB1A2A92B3860058F1D7 /* CircularProfileImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F0594FA82A916A2E008F38DF /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 			children = (
 				F0594FAD2A916B26008F38DF /* ActiveNow */,
 				F07927D92A904D8900AE06CB /* Authentication */,
+				F054DB192A92B3700058F1D7 /* Components */,
 				F0594FA82A916A2E008F38DF /* Inbox */,
 				F07927E42A90557F00AE06CB /* Modifiers */,
 				F0E7CFDA2A926C5E00EEF770 /* NewMessage */,
@@ -329,6 +340,7 @@
 				F0E7CFE12A92714500EEF770 /* ProfileView.swift in Sources */,
 				F07927E32A9053E200AE06CB /* SignUpView.swift in Sources */,
 				F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */,
+				F054DB1B2A92B3860058F1D7 /* CircularProfileImageView.swift in Sources */,
 				F0E7CFE52A92774000EEF770 /* ProfileViewModel.swift in Sources */,
 				F0594FAC2A916A4A008F38DF /* InboxView.swift in Sources */,
 				F07927E12A904DD300AE06CB /* LoginView.swift in Sources */,

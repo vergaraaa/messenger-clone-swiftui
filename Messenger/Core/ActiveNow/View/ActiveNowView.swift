@@ -10,14 +10,11 @@ import SwiftUI
 struct ActiveNowView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 30) {
+            HStack(spacing: 25) {
                 ForEach(0 ... 10, id: \.self) { user in
                     VStack {
                         ZStack (alignment: .bottomTrailing) {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                                .foregroundColor(Color(.systemGray4))
+                            CircularProfileImageView(user: User.MOCK_USER, size: .medium)
                             
                             ZStack {
                                 Circle()
