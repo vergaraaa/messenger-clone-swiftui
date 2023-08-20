@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F054DB182A92B1070058F1D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054DB172A92B1070058F1D7 /* User.swift */; };
 		F0594FAC2A916A4A008F38DF /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FAB2A916A4A008F38DF /* InboxView.swift */; };
 		F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB02A916B40008F38DF /* ActiveNowView.swift */; };
 		F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0594FB22A916CC1008F38DF /* InboxRowView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F054DB172A92B1070058F1D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F0594FAB2A916A4A008F38DF /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		F0594FB02A916B40008F38DF /* ActiveNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowView.swift; sourceTree = "<group>"; };
 		F0594FB22A916CC1008F38DF /* InboxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRowView.swift; sourceTree = "<group>"; };
@@ -125,8 +127,6 @@
 				F07927DC2A904D8C00AE06CB /* Extensions */,
 				F07927DB2A904D8B00AE06CB /* Model */,
 				F07927DA2A904D8B00AE06CB /* Services */,
-				F07927CA2A904D8300AE06CB /* MessengerApp.swift */,
-				F07927CC2A904D8300AE06CB /* ContentView.swift */,
 				F07927CE2A904D8400AE06CB /* Assets.xcassets */,
 				F07927D02A904D8400AE06CB /* Preview Content */,
 			);
@@ -144,6 +144,7 @@
 		F07927D82A904D8700AE06CB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F07927CA2A904D8300AE06CB /* MessengerApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -166,6 +167,7 @@
 		F07927DB2A904D8B00AE06CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F054DB172A92B1070058F1D7 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +196,7 @@
 		F07927DE2A904DB900AE06CB /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				F07927CC2A904D8300AE06CB /* ContentView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F054DB182A92B1070058F1D7 /* User.swift in Sources */,
 				F0E7CFE32A9273F700EEF770 /* SettingsOptionViewModel.swift in Sources */,
 				F0E7CFDC2A926C7200EEF770 /* NewMessageView.swift in Sources */,
 				F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */,

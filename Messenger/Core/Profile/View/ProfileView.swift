@@ -9,6 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct ProfileView: View {
+    let user: User
+    
     @State var selectedImage: PhotosPickerItem?
     
     @StateObject var profileVM = ProfileViewModel()
@@ -26,15 +28,21 @@ struct ProfileView: View {
                             .clipShape(Circle())
                     }
                     else {
-                        Image(systemName: "person.circle.fill")
+//                        Image(systemName: "person.circle.fill")
+//                            .resizable()
+//                            .frame(width: 80, height: 80)
+//                            .foregroundColor(Color(.systemGray4))
+                        
+                        Image(user.profileImageUrl ?? "")
                             .resizable()
+                            .scaledToFill()
                             .frame(width: 80, height: 80)
-                            .foregroundColor(Color(.systemGray4))
+                            .clipShape(Circle())
                     }
                     
                 }
                 
-                Text("Bruce Wayne")
+                Text(user.fullname)
                     .font(.title2)
                     .fontWeight(.semibold)
             }
@@ -72,6 +80,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User.MOCK_USER)
     }
 }
