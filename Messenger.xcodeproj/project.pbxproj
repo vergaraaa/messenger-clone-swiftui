@@ -17,6 +17,7 @@
 		F07927E12A904DD300AE06CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07927E02A904DD300AE06CB /* LoginView.swift */; };
 		F07927E32A9053E200AE06CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07927E22A9053E200AE06CB /* SignUpView.swift */; };
 		F07927E62A90559800AE06CB /* MSTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07927E52A90559800AE06CB /* MSTextFieldModifier.swift */; };
+		F0E7CFDC2A926C7200EEF770 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7CFDB2A926C7200EEF770 /* NewMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F07927E02A904DD300AE06CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F07927E22A9053E200AE06CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F07927E52A90559800AE06CB /* MSTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSTextFieldModifier.swift; sourceTree = "<group>"; };
+		F0E7CFDB2A926C7200EEF770 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				F07927D92A904D8900AE06CB /* Authentication */,
 				F0594FA82A916A2E008F38DF /* Inbox */,
 				F07927E42A90557F00AE06CB /* Modifiers */,
+				F0E7CFDA2A926C5E00EEF770 /* NewMessage */,
 				F07927DE2A904DB900AE06CB /* Root */,
 			);
 			path = Core;
@@ -203,6 +206,14 @@
 				F07927E52A90559800AE06CB /* MSTextFieldModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		F0E7CFDA2A926C5E00EEF770 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7CFDB2A926C7200EEF770 /* NewMessageView.swift */,
+			);
+			path = NewMessage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E7CFDC2A926C7200EEF770 /* NewMessageView.swift in Sources */,
 				F0594FB32A916CC1008F38DF /* InboxRowView.swift in Sources */,
 				F07927E32A9053E200AE06CB /* SignUpView.swift in Sources */,
 				F0594FB12A916B40008F38DF /* ActiveNowView.swift in Sources */,
