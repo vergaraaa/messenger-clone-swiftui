@@ -8,11 +8,13 @@
 import Foundation
 
 class SignUpViewModel: ObservableObject {
+    private let authService = AuthService.shared
+    
     @Published var email = ""
     @Published var password = ""
     @Published var fullname = ""
     
     func createUser() async throws {
-        try await AuthService().createUser(withEmail: email, password: password, fullname: fullname)
+        try await authService.createUser(withEmail: email, password: password, fullname: fullname)
     }
 }

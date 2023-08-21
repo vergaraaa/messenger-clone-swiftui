@@ -17,8 +17,12 @@ class AuthService {
     }
     
     func login(withEmail email: String, password: String) async throws {
-        print("DEBUG: email is \(email)")
-        print("DEBUG: password is \(password)")
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.userSession = result.user
+        } catch {
+            print("DEBUG: failed to sign in user with error \(error.localizedDescription)")
+        }
     }
     
     func createUser(withEmail email: String, password: String, fullname: String) async throws {
@@ -28,5 +32,16 @@ class AuthService {
         } catch {
             print("DEBUG: failed to create user with error \(error.localizedDescription)")
         }
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            
+            self.userSession = nil
+        } catch {
+            print("DEBUG: failed to sign out with error \(error.localizedDescription)")
+        }
+        
     }
 }
