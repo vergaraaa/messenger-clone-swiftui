@@ -10,9 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var email = ""
-    @State var password = ""
-    @State var fullname = ""
+    @StateObject var signUpVM = SignUpViewModel()
     
     var body: some View {
         VStack {
@@ -27,19 +25,20 @@ struct SignUpView: View {
             
             // textfields
             VStack {
-                TextField("Enter your email...", text: $email)
+                TextField("Enter your email...", text: $signUpVM.email)
+                    .autocapitalization(.none)
                     .modifier(MSTextFieldModifier())
                 
-                TextField("Enter your fullname...", text: $fullname)
+                TextField("Enter your fullname...", text: $signUpVM.fullname)
                     .modifier(MSTextFieldModifier())
                 
-                SecureField("Enter your password...", text: $password)
+                SecureField("Enter your password...", text: $signUpVM.password)
                     .modifier(MSTextFieldModifier())
             }
             
             // sign up button
             Button {
-                print("sign up")
+                Task { try await signUpVM.createUser() }
             } label: {
                 Text("Sign up")
                     .font(.subheadline)
