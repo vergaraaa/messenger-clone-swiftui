@@ -24,7 +24,7 @@ struct InboxView: View {
                 ActiveNowView()
                 
                 List {
-                    ForEach (0 ... 10, id: \.self) { message in
+                    ForEach (0 ... 10, id: \.self) { message in 
                         InboxRowView()
                     }
                 }

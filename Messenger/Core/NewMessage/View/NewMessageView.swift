@@ -52,6 +52,9 @@ struct NewMessageView: View {
                     }
                 }
             }
+            .onDisappear {
+                selectedUser = nil
+            }
             .navigationTitle("New Message")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -61,7 +64,7 @@ struct NewMessageView: View {
                     }
                     .foregroundColor(.black)
                 }
-        }
+            }
         }
     }
 }

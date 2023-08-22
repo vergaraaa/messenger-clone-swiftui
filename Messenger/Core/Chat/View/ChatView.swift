@@ -10,7 +10,12 @@ import SwiftUI
 struct ChatView: View {
     let user: User
     
-    @State private var messageText = ""
+    @StateObject var chatVM: ChatViewModel
+    
+    init(user: User) {
+        self.user = user
+        self._chatVM = StateObject(wrappedValue: ChatViewModel(user: user))
+    }
     
     var body: some View {
         VStack {
@@ -32,21 +37,24 @@ struct ChatView: View {
                 }
                 
                 // messages
-                ForEach(0 ... 15, id: \.self ) { message in
-                    ChatMessageCell(isFromCurrentUser: Bool.random())
+                ForEach(chatVM.messages) { message in
+                    ChatMessageCell(message: message)
                 }
             }
             
             // message input view
             ZStack(alignment: .trailing) {
-                TextField("Message...", text: $messageText, axis: .vertical)
+                TextField("Message...", text: $chatVM.messageText, axis: .vertical)
                     .padding(12)
                     .padding(.trailing, 60)
                     .background(Color(.systemGroupedBackground))
                     .clipShape(Capsule())
                 
                 Button {
-                    print("sent message")
+                    Task {
+                        chatVM.sendMessage()
+                        chatVM.messageText = ""
+                    }
                 } label: {
                     Text("Send")
                         .fontWeight(.semibold)
