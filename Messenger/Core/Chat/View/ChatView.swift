@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChatView: View {
+    let user: User
+    
     @State private var messageText = ""
     
     var body: some View {
@@ -15,10 +17,10 @@ struct ChatView: View {
             ScrollView {
                 // header
                 VStack {
-                    CircularProfileImageView(user: User.MOCK_USER, size: .xlarge)
+                    CircularProfileImageView(user: user, size: .xlarge)
                     
                     VStack(spacing: 5) {
-                        Text("Bruce Wayne")
+                        Text(user.fullname)
                             .font(.title3)
                             .fontWeight(.semibold)
                         
@@ -58,6 +60,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(user: User.MOCK_USER)
     }
 }
