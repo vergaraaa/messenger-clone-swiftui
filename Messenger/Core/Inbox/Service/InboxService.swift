@@ -9,13 +9,13 @@ import Firebase
 import Foundation
 
 class InboxService {
-//    static let shared = InboxService()
     @Published var documentChanges = [DocumentChange]()
     
     func observeRecentMessages() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let query = FirestoreConstants.MessagesCollection
+        let query = FirestoreConstants
+            .MessagesCollection
             .document(uid)
             .collection("recent-messages")
             .order(by: "timestamp", descending: true)

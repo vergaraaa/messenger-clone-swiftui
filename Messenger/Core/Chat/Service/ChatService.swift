@@ -24,7 +24,6 @@ struct ChatService {
         let messageId = currentUserRef.documentID
         
         let message = Message(
-            messageId: messageId,
             fromId: currentUid,
             toId: chatPartnerId,
             messageText: messageText,

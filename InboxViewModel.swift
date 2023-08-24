@@ -34,14 +34,21 @@ class InboxViewModel: ObservableObject {
     }
     
     private func loadInitialMessages(fromChanges changes: [DocumentChange]) {
-        var messages = changes.compactMap({ try? $0.document.data(as: Message.self)})
+        let messages = changes.compactMap({ try? $0.document.data(as: Message.self)})
         
         for i in 0 ..< messages.count {
-            let message = messages[i]
-            
+            var message = messages[i]
+
             UserService.fetchUser(withUid: message.chartPartnerId) { user in
-                messages[i].user = user
-                self.recentMessages.append(messages[i])
+                message.user = user
+                
+                if let existingConversationIndex = self.recentMessages.firstIndex(where: { $0.user?.uid == user.uid }) {
+                    self.recentMessages[existingConversationIndex] = message
+                } else {
+                    self.recentMessages.append(message)
+                }
+
+                self.recentMessages.sort(by: {$0.timestamp.dateValue() > $1.timestamp.dateValue() })
             }
         }
     }
