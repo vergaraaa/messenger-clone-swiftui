@@ -52,9 +52,9 @@ struct NewMessageView: View {
                     }
                 }
             }
-            .onDisappear {
-                selectedUser = nil
-            }
+//            .onDisappear {
+//                selectedUser = nil
+//            }
             .navigationTitle("New Message")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
