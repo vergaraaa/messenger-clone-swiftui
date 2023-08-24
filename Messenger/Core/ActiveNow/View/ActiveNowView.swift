@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct ActiveNowView: View {
+    @StateObject var activeNowVM = ActiveNowViewModel()
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 25) {
-                ForEach(0 ... 10, id: \.self) { user in
-                    VStack {
-                        ZStack (alignment: .bottomTrailing) {
-                            CircularProfileImageView(user: User.MOCK_USER, size: .medium)
-                            
-                            ZStack {
-                                Circle()
-                                    .fill(.white)
-                                    .frame(width: 18, height: 18)
+                ForEach(activeNowVM.users) { user in
+                    NavigationLink(value: Route.chatView(user)) {
+                        VStack {
+                            ZStack (alignment: .bottomTrailing) {
+                                CircularProfileImageView(user: user, size: .medium)
                                 
-                                Circle()
-                                    .fill(Color(.systemGreen))
-                                    .frame(width: 12, height: 12)
+                                ZStack {
+                                    Circle()
+                                        .fill(.white)
+                                        .frame(width: 18, height: 18)
+                                    
+                                    Circle()
+                                        .fill(Color(.systemGreen))
+                                        .frame(width: 12, height: 12)
+                                }
                             }
+                            
+                            Text(user.firstName)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
                         }
-                        
-                        Text("Bruce")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
                     }
                 }
             }

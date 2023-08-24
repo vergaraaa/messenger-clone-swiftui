@@ -20,22 +20,41 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            List {
                 ActiveNowView()
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                    .padding(.horizontal, 5)
                 
-                List {
-                    ForEach (inboxVM.recentMessages) { message in 
+                ForEach (inboxVM.recentMessages) { message in
+                    ZStack {
+                        NavigationLink(value: message) {
+                            EmptyView()
+                        }.opacity(0.0)
+                        
                         InboxRowView(message: message)
                     }
                 }
-                .listStyle(.plain)
-                .frame(height: UIScreen.main.bounds.height - 120)
             }
+            .navigationTitle("Chats")
+            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(.plain)
             .onChange(of: selectedUser, perform: { newValue in
                 showChat = newValue != nil
             })
-            .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
+            .navigationDestination(for: Message.self, destination: { message in
+                if let user = message.user {
+                    ChatView(user: user)
+                }
+            })
+            .navigationDestination(for: Route.self, destination: { route in
+                switch route{
+                case .profile(let user):
+                    ProfileView(user: user)
+                case .chatView(let user):
+                    ChatView(user: user)
+                }
             })
             .navigationDestination(isPresented: $showChat, destination: {
                 if let user = selectedUser {
@@ -48,14 +67,11 @@ struct InboxView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {
-                        NavigationLink(value: user) {
-                            CircularProfileImageView(user: user, size: .xsmall)
+                        if let user {
+                            NavigationLink(value: Route.profile(user)) {
+                                CircularProfileImageView(user: user, size: .xsmall)
+                            }
                         }
-                        
-                        
-                        Text("Chat")
-                            .font(.title)
-                            .fontWeight(.semibold)
                     }
                 }
                 
@@ -69,7 +85,6 @@ struct InboxView: View {
                             .frame(width: 32, height: 32)
                             .foregroundStyle(.black, Color(.systemGray5))
                     }
-
                 }
             }
         }
